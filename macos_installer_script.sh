@@ -59,7 +59,10 @@ dscl . -create /Users/teacher NFSHomeDirectory /Users/teacher
 
 dscl . -passwd /Users/teacher "password"
 dscl . -append /Groups/admin GroupMembership teacher
-dscl . -append /Users/teacher Picture /Library/User\ Pictures/Fun/Medal.tif
+dscl . -delete /Users/teacher JPEGPhoto
+dscl . -create /Users/teacher Picture /Library/User\ Pictures/Fun/Medal.tif
+mkdir /Users/teacher
+touch /Users/teacher/.skipbuddy
 
 
 ######################################################################################
