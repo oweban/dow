@@ -72,19 +72,26 @@ dscl . -append /Groups/_appserveradm GroupMembership teacher
 
 
 ############################################################
+# Things to do when that's all done
+#
+# Set Zoom and TeamViewer to have Screen Recording and Accessibility permissions. May need to add Zoom in manually for Accessibility.
+# Login to Teacher account
+# Set teacher's login image to the medal. Will work on scripting it properly.
+# Add teacher to FileVault users.
+# Update macOS if it's not done.
+# 
+# This space left blank for other things.
+#
 ############################################################
-# MAKE SURE YOU ADD THE TEACHER ACCOUNT TO FILEVAULT USERS #
-############################################################
-############################################################
 
 
 
 
 
 
-######################################################################################
-# Below are some things I'm working on, so they're commented out for the time being. #
-######################################################################################
+#####################################################################################################
+# Below are some other bits and pieces I'm working on, so they're commented out for the time being. #
+#####################################################################################################
 
 # Enable right-click on apple magic mouse etc
 #/usr/bin/defaults write <PATH/TO/USER/HOMEFOLDER>/Library/Preferences/com.apple.driver.AppleHIDMouse.plist Button2 -int 2
