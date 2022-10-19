@@ -11,9 +11,9 @@
 # sudo zsh                                                                                                          #
 # cd /Users/Shared                                                                                                  #
 #                                                                                                                   #
-# OPTIONAL FOR GETTING THIS FAST                                                                                    #
+### OPTIONAL FOR GETTING THIS FAST                                                                                ###
 # curl https://raw.githubusercontent.com/oweban/dow/main/macos_installer_script.sh -o ./macos_installer_script.sh   #
-# END OPTIONAL                                                                                                      #
+### END OPTIONAL                                                                                                  ###
 #                                                                                                                   #
 # chmod +x ./macos_installer_script.sh                                                                              #
 # ./macos_installer_script.sh                                                                                       #
