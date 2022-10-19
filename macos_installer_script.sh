@@ -2,7 +2,7 @@
 
 #####################################################################################################################
 # Script for installing a bunch of things rapidly. Note that this should only be put on a wiped laptop, immediately #
-# after making the first account and logging into it.                                                               #
+# after making the first account and logging into it (which makes the 501 account).                                 #
 #                                                                                                                   #
 # Put this file in /Users/Shared, then open Terminal.                                                               #
 #                                                                                                                   #
@@ -20,29 +20,29 @@
 #####################################################################################################################
 
 
-# Let's get Installomator and make it executable
+# Let's get Installomator and make it executable #
 curl https://raw.githubusercontent.com/Installomator/Installomator/main/Installomator.sh -o /Users/Shared/Installomator.sh
 chmod +x /Users/Shared/Installomator.sh
 
-# Now we need to edit DEBUG=1 to DEBUG=0 - search the file for it, and replace it wherever it happens, in case they change the line it's on.
+# Now we need to edit DEBUG=1 to DEBUG=0 - search the file for it, and replace it wherever it happens, in case they change the line it's on. #
 sed -i '' "s/DEBUG\=1/DEBUG\=0/" /Users/Shared/Installomator.sh
 
-# Install Chrome and Drive
+# Install Chrome and Drive #
 /Users/Shared/Installomator.sh googlechromepkg
 /Users/Shared/Installomator.sh googledrive
 
-# This is to bypass the Outlook/OneDrive/OneNote bullshit
+# This is to bypass the Outlook/OneDrive/OneNote bullshit #
 /Users/Shared/Installomator.sh microsoftautoupdate
 /Users/Shared/Installomator.sh microsoftexcel
 /Users/Shared/Installomator.sh microsoftword
 /Users/Shared/Installomator.sh microsoftpowerpoint
 
-# Get Zoom and TeamViewer, too
+# Get Zoom and TeamViewer, too #
 /Users/Shared/Installomator.sh zoomclient
 /Users/Shared/Installomator.sh teamviewer
 
-# Get Creative Cloud?
-# Uncomment the following line if we want this
+# Get Creative Cloud? #
+# Uncomment the following line if we want this #
 #/Users/Shared/Installomator.sh adobecreativeclouddesktop
 
 # Let's skip the user-setup part - no more having to choose touchid, screentime, etc.
@@ -58,12 +58,17 @@ dscl . -create /Users/teacher UniqueID "502"
 dscl . -create /Users/teacher PrimaryGroupID 20
 dscl . -create /Users/teacher NFSHomeDirectory /Users/teacher
 
-# Edit the following line to add in the current teacher password.
+# Edit the following line to add in the current teacher password. #
 
 dscl . -passwd /Users/teacher "password"
 dscl . -append /Groups/admin GroupMembership teacher
-dscl . -delete /Users/teacher JPEGPhoto
-dscl . -create /Users/teacher Picture /Library/User\ Pictures/Fun/Medal.tif
+dscl . -append /Groups/_appserverusr GroupMembership teacher
+dscl . -append /Groups/_appserveradm GroupMembership teacher
+
+# This needs work - for now, manually select the Medal image in System Preferences/Users & Groups #
+
+#dscl . -delete /Users/teacher JPEGPhoto
+#dscl . -create /Users/teacher Picture /Library/User\ Pictures/Fun/Medal.tif
 
 
 ############################################################
@@ -92,7 +97,6 @@ dscl . -create /Users/teacher Picture /Library/User\ Pictures/Fun/Medal.tif
 #
 # Disable shadow in screenshots
 #defaults write com.apple.screencapture disable-shadow -bool true
-
 
 # Hide admin account?
 # Expanded Save dialog boxes?
