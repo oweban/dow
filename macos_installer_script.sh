@@ -1,22 +1,23 @@
 #!/bin/zsh
 
-##########################################################
-# Script for installing a bunch of things rapidly.       #
-#                                                        #
-# Put this file in /Users/Shared, then open Terminal     #
-#                                                        #
-# You can also get this file faster by ignoring putting  #
-# the file in place, and just doing the curl line below. #
-#                                                        #
-# sudo zsh                                               #
-# cd /Users/Shared                                       #
-#                                                        #
-# OPTIONAL FOR GETTING THIS FAST                         #
-#                                                         #
-#                                                        #
-# chmod +x ./macos_installer_script.sh                   #
-# ./macos_installer_script.sh                            #
-##########################################################
+#####################################################################################################################
+# Script for installing a bunch of things rapidly.                                                                  #
+#                                                                                                                   #
+# Put this file in /Users/Shared, then open Terminal                                                                #
+#                                                                                                                   #
+# You can also get this file faster by ignoring putting                                                             #
+# the file in place, and just doing the curl line below.                                                            #
+#                                                                                                                   #
+# sudo zsh                                                                                                          #
+# cd /Users/Shared                                                                                                  #
+#                                                                                                                   #
+# OPTIONAL FOR GETTING THIS FAST                                                                                    #
+# curl https://raw.githubusercontent.com/oweban/dow/main/macos_installer_script.sh -o ./macos_installer_script.sh   #
+# END OPTIONAL                                                                                                      #
+#                                                                                                                   #
+# chmod +x ./macos_installer_script.sh                                                                              #
+# ./macos_installer_script.sh                                                                                       #
+#####################################################################################################################
 
 
 # Let's get Installomator and make it executable
