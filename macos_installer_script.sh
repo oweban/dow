@@ -6,7 +6,7 @@
 #                                                                                                                   #
 # Put this file in /Users/Shared, then open Terminal.                                                               #
 #                                                                                                                   #
-# You can also get this file faster by ignoring moving the file into place, and just doing the curl line below.     #                                                          #
+# You can also get this file faster by ignoring moving the file into place, and just doing the curl line below.     #
 #                                                                                                                   #
 # sudo zsh                                                                                                          #
 # cd /Users/Shared                                                                                                  #
@@ -45,6 +45,9 @@ sed -i '' "s/DEBUG\=1/DEBUG\=0/" /Users/Shared/Installomator.sh
 # Uncomment the following line if we want this
 #/Users/Shared/Installomator.sh adobecreativeclouddesktop
 
+# Let's skip the user-setup part - no more having to choose touchid, screentime, etc.
+
+touch /Library/User\ Template/Non_localized/.skipbuddy
 
 # Let's make the teacher/education account #
 
@@ -61,8 +64,17 @@ dscl . -passwd /Users/teacher "password"
 dscl . -append /Groups/admin GroupMembership teacher
 dscl . -delete /Users/teacher JPEGPhoto
 dscl . -create /Users/teacher Picture /Library/User\ Pictures/Fun/Medal.tif
-mkdir /Users/teacher
-touch /Users/teacher/.skipbuddy
+
+
+############################################################
+############################################################
+# MAKE SURE YOU ADD THE TEACHER ACCOUNT TO FILEVAULT USERS #
+############################################################
+############################################################
+
+
+
+
 
 
 ######################################################################################
