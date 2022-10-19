@@ -1,12 +1,12 @@
 #!/bin/zsh
 
 #####################################################################################################################
-# Script for installing a bunch of things rapidly.                                                                  #
+# Script for installing a bunch of things rapidly. Note that this should only be put on a wiped laptop, immediately #
+# after making the first account and logging into it.                                                               #
 #                                                                                                                   #
-# Put this file in /Users/Shared, then open Terminal                                                                #
+# Put this file in /Users/Shared, then open Terminal.                                                               #
 #                                                                                                                   #
-# You can also get this file faster by ignoring putting                                                             #
-# the file in place, and just doing the curl line below.                                                            #
+# You can also get this file faster by ignoring moving the file into place, and just doing the curl line below.     #                                                          #
 #                                                                                                                   #
 # sudo zsh                                                                                                          #
 # cd /Users/Shared                                                                                                  #
