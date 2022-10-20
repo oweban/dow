@@ -59,14 +59,15 @@ dscl . -create /Users/teacher PrimaryGroupID 20
 dscl . -create /Users/teacher NFSHomeDirectory /Users/teacher
 
 # Edit the following line to add in the current teacher password. #
-
 dscl . -passwd /Users/teacher "password"
 dscl . -append /Groups/admin GroupMembership teacher
 dscl . -append /Groups/_appserverusr GroupMembership teacher
 dscl . -append /Groups/_appserveradm GroupMembership teacher
 
-# This needs work - for now, manually select the Medal image in System Preferences/Users & Groups #
+# This is needed so the user can do updates etc! Edit the dashes after -password and -adminPassword to automate it.
+sysadminctl -secureTokenOn teacher -password - -adminUser admin -adminPassword -
 
+# This needs work - for now, manually select the Medal image in System Preferences/Users & Groups #
 #dscl . -delete /Users/teacher JPEGPhoto
 #dscl . -create /Users/teacher Picture /Library/User\ Pictures/Fun/Medal.tif
 
