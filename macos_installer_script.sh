@@ -22,28 +22,29 @@
 
 # Let's get Installomator and make it executable #
 curl https://raw.githubusercontent.com/Installomator/Installomator/main/Installomator.sh -o /Users/Shared/Installomator.sh
-chmod +x /Users/Shared/Installomator.sh
+cd /Users/Shared
+chmod +x ./Installomator.sh
 
 # Now we need to edit DEBUG=1 to DEBUG=0 - search the file for it, and replace it wherever it happens, in case they change the line it's on. #
-sed -i '' "s/DEBUG\=1/DEBUG\=0/" /Users/Shared/Installomator.sh
+sed -i '' "s/DEBUG\=1/DEBUG\=0/" ./Installomator.sh
 
 # Install Chrome and Drive #
-/Users/Shared/Installomator.sh googlechromepkg
-/Users/Shared/Installomator.sh googledrive
+./Installomator.sh googlechromepkg
+./Installomator.sh googledrive
 
-# This is to bypass the Outlook/OneDrive/OneNote bullshit #
-/Users/Shared/Installomator.sh microsoftautoupdate
-/Users/Shared/Installomator.sh microsoftexcel
-/Users/Shared/Installomator.sh microsoftword
-/Users/Shared/Installomator.sh microsoftpowerpoint
+# This is to bypass the Outlook/OneDrive/OneNote part of the Office install that we really don't want #
+./Installomator.sh microsoftautoupdate
+./Installomator.sh microsoftexcel
+./Installomator.sh microsoftword
+./Installomator.sh microsoftpowerpoint
 
 # Get Zoom and TeamViewer, too #
-/Users/Shared/Installomator.sh zoomclient
-/Users/Shared/Installomator.sh teamviewer
+./Installomator.sh zoomclient
+./Installomator.sh teamviewer
 
 # Get Creative Cloud? #
 # Uncomment the following line if we want this #
-#/Users/Shared/Installomator.sh adobecreativeclouddesktop
+#./Installomator.sh adobecreativeclouddesktop
 
 # Let's skip the user-setup part - no more having to choose touchid, screentime, etc.
 
@@ -90,6 +91,11 @@ sysadminctl -secureTokenOn teacher -password - -adminUser admin -adminPassword -
 
 
 
+
+
+
+
+
 #####################################################################################################
 # Below are some other bits and pieces I'm working on, so they're commented out for the time being. #
 # Mostly per-user though? Annoying.
@@ -108,10 +114,9 @@ sysadminctl -secureTokenOn teacher -password - -adminUser admin -adminPassword -
 #defaults write com.apple.screencapture disable-shadow -bool true
 
 # Hide admin account?
-# Expanded Save dialog boxes?
+# Expanded Save and Print dialog boxes?
 # defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 # defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
-
 # defaults write -g PMPrintingExpandedStateForPrint -bool true
 
 # Worth looking at https://github.com/aethys256/notes/blob/master/setup/macos-defaults.md
