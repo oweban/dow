@@ -92,6 +92,7 @@ sysadminctl -secureTokenOn teacher -password - -adminUser admin -adminPassword -
 
 #####################################################################################################
 # Below are some other bits and pieces I'm working on, so they're commented out for the time being. #
+# Mostly per-user though? Annoying.
 #####################################################################################################
 
 # Enable right-click on apple magic mouse etc
@@ -108,3 +109,9 @@ sysadminctl -secureTokenOn teacher -password - -adminUser admin -adminPassword -
 
 # Hide admin account?
 # Expanded Save dialog boxes?
+# defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+# defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
+# defaults write -g PMPrintingExpandedStateForPrint -bool true
+
+# Worth looking at https://github.com/aethys256/notes/blob/master/setup/macos-defaults.md
