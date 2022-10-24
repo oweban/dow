@@ -15,6 +15,9 @@
 # curl https://raw.githubusercontent.com/oweban/dow/main/macos_installer_script.sh -o ./macos_installer_script.sh   #
 ### END OPTIONAL                                                                                                  ###
 #                                                                                                                   #
+# That said - if we're going to edit this to add in the right passwords, then use vi or nano                        #
+# Only GUI editors to use would be Sublime/Textmate etc - NO TEXTEDIT.                                              #
+#                                                                                                                   #
 # chmod +x ./macos_installer_script.sh                                                                              #
 # ./macos_installer_script.sh                                                                                       #
 #####################################################################################################################
@@ -72,6 +75,10 @@ sysadminctl -secureTokenOn teacher -password - -adminUser admin -adminPassword -
 #dscl . -delete /Users/teacher JPEGPhoto
 #dscl . -create /Users/teacher Picture /Library/User\ Pictures/Fun/Medal.tif
 
+
+# Cleaning up time
+sleep 5
+rm -rf /Users/Shared/*.*
 
 ############################################################
 # Things to do when that's all done
