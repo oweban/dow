@@ -61,10 +61,14 @@ dscl . -create /Users/teacher RealName "Teacher"
 dscl . -create /Users/teacher UniqueID "502"
 dscl . -create /Users/teacher PrimaryGroupID 20
 dscl . -create /Users/teacher NFSHomeDirectory /Users/teacher
-
 # Edit the following line to add in the current teacher password. #
 dscl . -passwd /Users/teacher "password"
 dscl . -append /Groups/admin GroupMembership teacher
+
+# Could also be done as a one-liner with (noting teacher and admin passwords need to be changed in the line below):
+# sysadminctl -addUser teacher -fullName "Teacher" -UID "502" -GID "20" -shell /bin/zsh -password password -home /Users/teacher -admin -adminUser admin -adminPassword password
+
+# Add to other groups I've noted on other admin accounts
 dscl . -append /Groups/_appserverusr GroupMembership teacher
 dscl . -append /Groups/_appserveradm GroupMembership teacher
 
