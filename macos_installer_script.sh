@@ -28,8 +28,9 @@ curl https://raw.githubusercontent.com/Installomator/Installomator/main/Installo
 cd /Users/Shared
 chmod +x ./Installomator.sh
 
-# Now we need to edit DEBUG=1 to DEBUG=0 - search the file for it, and replace it wherever it happens, in case they change the line it's on. #
+# Now we need to edit Installomator.sh to switch to DEBUG=0 and NOTIFY=silent #
 sed -i '' "s/DEBUG\=1/DEBUG\=0/" ./Installomator.sh
+sed -i '' "s/NOTIFY\=success/NOTIFY\=silent/" ./Installomator.sh
 
 # Install Chrome and Drive #
 ./Installomator.sh googlechromepkg
@@ -79,10 +80,13 @@ sysadminctl -secureTokenOn teacher -password - -adminUser admin -adminPassword -
 #dscl . -delete /Users/teacher JPEGPhoto
 #dscl . -create /Users/teacher Picture /Library/User\ Pictures/Fun/Medal.tif
 
+# Install Rosetta on M1
+/usr/sbin/softwareupdate --install-rosetta --agree-to-license
 
 # Cleaning up time
 sleep 5
 rm -rf /Users/Shared/*.*
+
 
 ############################################################
 # Things to do when that's all done
